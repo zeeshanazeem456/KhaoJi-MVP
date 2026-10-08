@@ -1,0 +1,14 @@
+{
+  "name": "KhaoJi — Campus Food Delivery",
+  "short_name": "KhaoJi",
+  "description": "Food delivery for FAST Islamabad students, restaurants and riders",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#D9301F",
+  "theme_color": "#D9301F",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

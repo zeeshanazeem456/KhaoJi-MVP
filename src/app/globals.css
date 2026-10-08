@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-tap-highlight-color: transparent; }
+body { @apply bg-white font-sans text-chai antialiased; font-size: 16px; line-height: 1.5; }
+:focus-visible { outline: 3px solid #0E4D64; outline-offset: 2px; }
+
+@layer components {
+  /* Buttons: pill shapes. .btn-primary is THE action of a screen: haldi + ink outline + sticker shadow. */
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 text-[15px] font-semibold transition active:translate-y-px disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn border-2 border-chai bg-haldi text-chai shadow-sticker hover:bg-haldi-dark active:shadow-sticker-sm; }
+  .btn-chili { @apply btn bg-chili text-white hover:bg-chili-dark; }
+  .btn-secondary { @apply btn border-2 border-chai/15 bg-white text-chai hover:border-chai/40; }
+  .btn-danger { @apply btn border-2 border-chili/25 bg-white text-chili hover:bg-chili-light; }
+  .btn-sm { @apply min-h-[36px] px-3.5 text-sm; }
+  .card { @apply rounded-[18px] border border-chai-line bg-white; }
+  .input { @apply min-h-[48px] w-full rounded-2xl border-2 border-chai-line bg-white px-4 text-[15px] outline-none transition placeholder:text-chai-muted/70 focus:border-neel; }
+  .label { @apply mb-1.5 block text-sm font-medium text-chai; }
+  .chip { @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .h-sign { @apply font-sign leading-[0.95] tracking-tight; }
+  .section-title { @apply text-lg font-bold text-chai; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@keyframes ticket-in { from { transform: translateY(-8px); opacity: 0; } to { transform: none; opacity: 1; } }
+.animate-ticket-in { animation: ticket-in 320ms cubic-bezier(.2,.8,.2,1); }
